@@ -10,7 +10,7 @@ namespace YARTE.UI
     public partial class HtmlEditor : UserControl
     {
         private readonly HtmlDocument _doc;
-        private readonly IList<IHTMLEditorButton> _customButtons;
+        private readonly IList<IFunctionButton> _customButtons;
 
         public HtmlEditor()
         {
@@ -19,7 +19,7 @@ namespace YARTE.UI
             InitializeWebBrowserAsEditor();
 
             _doc = textWebBrowser.Document;
-            _customButtons = new List<IHTMLEditorButton>();
+            _customButtons = new List<IFunctionButton>();
 
             updateToolBarTimer.Start();
             updateToolBarTimer.Tick += updateToolBarTimer_Tick;
@@ -91,6 +91,12 @@ namespace YARTE.UI
             editcontrolsToolStrip.Items.Add(CreateButton(toolbarItem));
         }
 
+        public void AddToolbarItem(IFunctionButton toolbarItem)
+        {
+            _customButtons.Add(toolbarItem);
+            editcontrolsToolStrip.Items.Add(CreateButton(toolbarItem));
+        }
+
         public void AddToolbarItems(IEnumerable<IHTMLEditorButton> toolbarItems)
         {
             foreach (var toolbarItem in toolbarItems)
@@ -122,6 +128,23 @@ namespace YARTE.UI
             args.Editor = this;
 
             IHTMLEditorButton button = toolbarItem;
+            toolStripButton.Click += (sender, o) => button.IconClicked(args);
+
+            return toolStripButton;
+        }
+
+        private ToolStripItem CreateButton(IFunctionButton toolbarItem)
+        {
+            var toolStripButton = new ToolStripButton();
+            toolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton.Name = toolbarItem.IconName;
+            toolStripButton.Text = toolbarItem.IconTooltip;
+
+            var args = new HTMLEditorButtonArgs();
+            args.Document = _doc;
+            args.Editor = this;
+
+            IFunctionButton button = toolbarItem;
             toolStripButton.Click += (sender, o) => button.IconClicked(args);
 
             return toolStripButton;
@@ -223,7 +246,16 @@ namespace YARTE.UI
         {
             var doc = (IHTMLDocument2)_doc.DomDocument;
 
-            var commands = _customButtons.Select(c => c.CommandIdentifier).Where(c => !string.IsNullOrEmpty(c)); 
+            var commands = new List<string>();
+            foreach (var button in _customButtons)
+            {
+                if (button is IHTMLEditorButton)
+                {
+                    var temp = (IHTMLEditorButton)button;
+                    commands.Add(temp.CommandIdentifier);
+                }
+            }
+            //var commands = _customButtons.Select(c => c.CommandIdentifier).Where(c => !string.IsNullOrEmpty(c)); 
 
             foreach (var command in commands)
             {

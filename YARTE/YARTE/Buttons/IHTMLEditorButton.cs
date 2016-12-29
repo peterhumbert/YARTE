@@ -9,12 +9,9 @@ namespace YARTE.UI.Buttons
         public HtmlEditor Editor;
     }
 
-    public interface IHTMLEditorButton
+    public interface IHTMLEditorButton : IFunctionButton
     {
-        void IconClicked(HTMLEditorButtonArgs doc);
         Image IconImage { get; }
-        string IconName { get; }
-        string IconTooltip { get; }
 
         /// <summary>
         /// This is the string that will be used to poll the text area to determine if the cursor

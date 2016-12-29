@@ -4,16 +4,11 @@ using YARTE.Properties;
 
 namespace YARTE.UI.Buttons
 {
-    public class ReadOnlyButton : IHTMLEditorButton
+    public class ReadOnlyButton : IFunctionButton
     {
         public void IconClicked(HTMLEditorButtonArgs args)
         {
             args.Editor.ReadOnly = !args.Editor.ReadOnly;
-        }
-
-        public Image IconImage
-        {
-            get { return Resources.justifycenter; }
         }
 
         public string IconName
@@ -24,14 +19,6 @@ namespace YARTE.UI.Buttons
         public string IconTooltip
         {
             get { return "Read Only Toggle"; }
-        }
-
-        public string CommandIdentifier
-        {
-            get
-            {
-                return "JustifyCenter";
-            }
         }
     }
 }
