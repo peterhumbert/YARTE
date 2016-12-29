@@ -16,14 +16,15 @@ namespace YARTE.UI.Buttons
 
         public void IconClicked(ButtonArgs args, ToolStripButton button)
         {
-            if (button.Text.Equals("Enter Edit Mode"))
+            if (_label.Equals("Enter Edit Mode"))
             {
-                button.Text = "Enter View Mode";
+                _label = "Enter View Mode";
             }
             else
             {
-                button.Text = "Enter Edit Mode";
+                _label = "Enter Edit Mode";
             }
+            button.Text = _label;
             args.Editor.ReadOnly = !args.Editor.ReadOnly;
         }
 
