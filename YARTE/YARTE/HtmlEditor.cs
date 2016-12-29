@@ -139,7 +139,7 @@ namespace YARTE.UI
             var toolStripButton = new ToolStripButton();
             toolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripButton.Name = toolbarItem.IconName;
-            toolStripButton.Text = toolbarItem.IconTooltip;
+            toolStripButton.Text = toolbarItem.Label;
 
             var args = new ButtonArgs();
             args.Document = _doc;

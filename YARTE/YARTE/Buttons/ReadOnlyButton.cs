@@ -7,6 +7,8 @@ namespace YARTE.UI.Buttons
 {
     public class ReadOnlyButton : IFunctionButton
     {
+        private string _label = "Enter View Mode";
+
         public void IconClicked(ButtonArgs args)
         {
             args.Editor.ReadOnly = !args.Editor.ReadOnly;
@@ -25,6 +27,12 @@ namespace YARTE.UI.Buttons
             args.Editor.ReadOnly = !args.Editor.ReadOnly;
         }
 
+        public string Label
+        {
+            get { return _label; }
+            set { _label = value; }
+        }
+
         public string IconName
         {
             get { return "Read Only"; }
@@ -32,7 +40,7 @@ namespace YARTE.UI.Buttons
 
         public string IconTooltip
         {
-            get { return "Read Only Toggle"; }
+            get { return _label; }
         }
     }
 }
