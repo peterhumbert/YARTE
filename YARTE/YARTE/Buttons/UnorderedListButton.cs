@@ -5,7 +5,7 @@ namespace YARTE.UI.Buttons
 {
     public class UnorderedListButton : IHTMLEditorButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             args.Document.ExecCommand("InsertUnorderedList", false, null);
         }

@@ -7,12 +7,12 @@ namespace YARTE.UI.Buttons
 {
     public class ReadOnlyButton : IFunctionButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             args.Editor.ReadOnly = !args.Editor.ReadOnly;
         }
 
-        public void IconClicked(HTMLEditorButtonArgs args, ToolStripButton button)
+        public void IconClicked(ButtonArgs args, ToolStripButton button)
         {
             if (button.Text.Equals("Enter Edit Mode"))
             {

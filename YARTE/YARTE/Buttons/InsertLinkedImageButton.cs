@@ -6,7 +6,7 @@ namespace YARTE.UI.Buttons
 {
     public class InsertLinkedImageButton : IHTMLEditorButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             var x = args.Editor.Location.X + 10;
             var y = args.Editor.Location.Y + 10;

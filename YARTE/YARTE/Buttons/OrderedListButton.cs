@@ -6,7 +6,7 @@ namespace YARTE.UI.Buttons
 {
     public class OrderedListButton : IHTMLEditorButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             args.Document.ExecCommand("InsertOrderedList", false, null);
         }

@@ -123,7 +123,7 @@ namespace YARTE.UI
             toolStripButton.Size = new System.Drawing.Size(25, 24);
             toolStripButton.Text = toolbarItem.IconTooltip;
 
-            var args = new HTMLEditorButtonArgs();
+            var args = new ButtonArgs();
             args.Document = _doc;
             args.Editor = this;
 
@@ -140,7 +140,7 @@ namespace YARTE.UI
             toolStripButton.Name = toolbarItem.IconName;
             toolStripButton.Text = toolbarItem.IconTooltip;
 
-            var args = new HTMLEditorButtonArgs();
+            var args = new ButtonArgs();
             args.Document = _doc;
             args.Editor = this;
 

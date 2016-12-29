@@ -7,7 +7,7 @@ namespace YARTE.UI.Buttons
 {
     public class ItalicButton : IHTMLEditorButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             args.Document.ExecCommand("Italic", false, null);
         }

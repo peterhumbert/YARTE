@@ -6,7 +6,7 @@ namespace YARTE.UI.Buttons
 {
     public class ForecolorButton : IHTMLEditorButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             var colorPicker = new ColorDialog();
             var result = colorPicker.ShowDialog();

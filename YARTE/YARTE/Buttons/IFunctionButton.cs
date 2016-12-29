@@ -6,6 +6,6 @@ namespace YARTE.UI.Buttons
 
     public interface IFunctionButton : IButton
     {
-        void IconClicked(HTMLEditorButtonArgs doc, ToolStripButton btn);
+        void IconClicked(ButtonArgs doc, ToolStripButton btn);
     }
 }

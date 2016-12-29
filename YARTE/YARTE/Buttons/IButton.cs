@@ -7,6 +7,12 @@ using System.Windows.Forms;
 
 namespace YARTE.UI.Buttons
 {
+    public struct ButtonArgs
+    {
+        public HtmlDocument Document;
+        public HtmlEditor Editor;
+    }
+
     public interface IButton
     {
         string IconName { get; }

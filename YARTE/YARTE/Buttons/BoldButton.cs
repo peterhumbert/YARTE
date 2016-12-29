@@ -5,7 +5,7 @@ namespace YARTE.UI.Buttons
 {
     public class BoldButton : IHTMLEditorButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             args.Document.ExecCommand("Bold", false, null);
         }

@@ -5,7 +5,7 @@ namespace YARTE.UI.Buttons
 {
     public class LinkButton : IHTMLEditorButton
     {
-        public void IconClicked(HTMLEditorButtonArgs args)
+        public void IconClicked(ButtonArgs args)
         {
             args.Document.ExecCommand("CreateLink", true, null);
         }

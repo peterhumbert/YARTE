@@ -3,15 +3,9 @@ using System.Windows.Forms;
 
 namespace YARTE.UI.Buttons
 {
-    public struct HTMLEditorButtonArgs
-    {
-        public HtmlDocument Document;
-        public HtmlEditor Editor;
-    }
-
     public interface IHTMLEditorButton : IButton
     {
-        void IconClicked(HTMLEditorButtonArgs doc);
+        void IconClicked(ButtonArgs doc);
         Image IconImage { get; }
 
         /// <summary>
