@@ -26,6 +26,8 @@ namespace YARTE.UI.Buttons
             editor.AddToolbarItem(new JustifyLeftButton());
             editor.AddToolbarItem(new JustifyCenterButton());
             editor.AddToolbarItem(new JustifyRightButton());
+            editor.AddToolbarDivider();
+            editor.AddToolbarItem(new ReadOnlyButton());
         }
     }
 }

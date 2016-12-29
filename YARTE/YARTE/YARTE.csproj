@@ -55,6 +55,7 @@
     <Compile Include="Buttons\LinkButton.cs" />
     <Compile Include="Buttons\OrderedListButton.cs" />
     <Compile Include="Buttons\PredefinedButtonSets.cs" />
+    <Compile Include="Buttons\ReadOnlyButton.cs" />
     <Compile Include="Buttons\UnderlineButton.cs" />
     <Compile Include="Buttons\UnlinkButton.cs" />
     <Compile Include="Buttons\UnorderedListButton.cs" />

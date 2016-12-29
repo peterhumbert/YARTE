@@ -15,6 +15,7 @@ namespace YARTE.Example
         private void button1_Click(object sender, System.EventArgs e)
         {
             MessageBox.Show(this.htmlEditor1.Html, "The output HTML");
+            htmlEditor1.ReadOnly = !htmlEditor1.ReadOnly;
         }
     }
 }
