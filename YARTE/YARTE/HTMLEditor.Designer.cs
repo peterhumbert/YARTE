@@ -40,11 +40,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textWebBrowser.Location = new System.Drawing.Point(0, 34);
-            this.textWebBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textWebBrowser.Margin = new System.Windows.Forms.Padding(4);
             this.textWebBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.textWebBrowser.Name = "textWebBrowser";
             this.textWebBrowser.Size = new System.Drawing.Size(743, 545);
             this.textWebBrowser.TabIndex = 0;
+            this.textWebBrowser.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.textWebBrowser_Navigating);
             // 
             // editcontrolsToolStrip
             // 
@@ -61,7 +62,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.editcontrolsToolStrip);
             this.Controls.Add(this.textWebBrowser);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HtmlEditor";
             this.Size = new System.Drawing.Size(743, 583);
             this.ContextMenuStripChanged += new System.EventHandler(this.HtmlEditor_ContextMenuStripChanged);

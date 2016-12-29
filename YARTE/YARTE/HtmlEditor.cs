@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using mshtml;
 using YARTE.UI.Buttons;
+using System.Diagnostics;
 
 namespace YARTE.UI
 {
@@ -285,6 +286,18 @@ namespace YARTE.UI
             if (textWebBrowser.Document != null)
             {
                 textWebBrowser.Document.ContextMenuShowing += Document_ContextMenuShowing;
+            }
+        }
+
+        private void textWebBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            // http://stackoverflow.com/questions/18035579/how-to-open-a-link-in-webbrowser-control-in-external-browser
+            // terminate current Navigating event; launch a new Process with the target URL to open user's default browser
+            if (ReadOnly)
+            {
+                e.Cancel = true;
+
+                Process.Start(e.Url.ToString());
             }
         }
     }
