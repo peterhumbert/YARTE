@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Buttons\BoldButton.cs" />
     <Compile Include="Buttons\ForecolorButton.cs" />
+    <Compile Include="Buttons\IButton.cs" />
     <Compile Include="Buttons\IFunctionButton.cs" />
     <Compile Include="Buttons\IHTMLEditorButton.cs" />
     <Compile Include="Buttons\InsertLinkedImageButton.cs" />

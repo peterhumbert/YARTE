@@ -4,10 +4,8 @@ using System.Windows.Forms;
 namespace YARTE.UI.Buttons
 {
 
-    public interface IFunctionButton
+    public interface IFunctionButton : IButton
     {
-        void IconClicked(HTMLEditorButtonArgs doc);
-        string IconName { get; }
-        string IconTooltip { get; }
+        void IconClicked(HTMLEditorButtonArgs doc, ToolStripButton btn);
     }
 }

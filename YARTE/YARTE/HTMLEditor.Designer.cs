@@ -36,31 +36,34 @@
             // 
             // textWebBrowser
             // 
-            this.textWebBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textWebBrowser.Location = new System.Drawing.Point(0, 28);
-            this.textWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textWebBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textWebBrowser.Location = new System.Drawing.Point(0, 34);
+            this.textWebBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textWebBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.textWebBrowser.Name = "textWebBrowser";
-            this.textWebBrowser.Size = new System.Drawing.Size(557, 443);
+            this.textWebBrowser.Size = new System.Drawing.Size(743, 545);
             this.textWebBrowser.TabIndex = 0;
             // 
             // editcontrolsToolStrip
             // 
+            this.editcontrolsToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.editcontrolsToolStrip.Location = new System.Drawing.Point(0, 0);
             this.editcontrolsToolStrip.Name = "editcontrolsToolStrip";
-            this.editcontrolsToolStrip.Size = new System.Drawing.Size(557, 25);
+            this.editcontrolsToolStrip.Size = new System.Drawing.Size(743, 25);
             this.editcontrolsToolStrip.TabIndex = 1;
             this.editcontrolsToolStrip.Text = "editcontrolsToolStrip";
             // 
             // HtmlEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.editcontrolsToolStrip);
             this.Controls.Add(this.textWebBrowser);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HtmlEditor";
-            this.Size = new System.Drawing.Size(557, 474);
+            this.Size = new System.Drawing.Size(743, 583);
             this.ContextMenuStripChanged += new System.EventHandler(this.HtmlEditor_ContextMenuStripChanged);
             this.ResumeLayout(false);
             this.PerformLayout();

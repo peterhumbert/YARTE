@@ -10,7 +10,7 @@ namespace YARTE.UI
     public partial class HtmlEditor : UserControl
     {
         private readonly HtmlDocument _doc;
-        private readonly IList<IFunctionButton> _customButtons;
+        private readonly IList<IButton> _customButtons;
 
         public HtmlEditor()
         {
@@ -19,7 +19,7 @@ namespace YARTE.UI
             InitializeWebBrowserAsEditor();
 
             _doc = textWebBrowser.Document;
-            _customButtons = new List<IFunctionButton>();
+            _customButtons = new List<IButton>();
 
             updateToolBarTimer.Start();
             updateToolBarTimer.Tick += updateToolBarTimer_Tick;
@@ -145,7 +145,7 @@ namespace YARTE.UI
             args.Editor = this;
 
             IFunctionButton button = toolbarItem;
-            toolStripButton.Click += (sender, o) => button.IconClicked(args);
+            toolStripButton.Click += (sender, o) => button.IconClicked(args,toolStripButton);
 
             return toolStripButton;
         }

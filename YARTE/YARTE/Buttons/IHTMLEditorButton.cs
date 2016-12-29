@@ -9,8 +9,9 @@ namespace YARTE.UI.Buttons
         public HtmlEditor Editor;
     }
 
-    public interface IHTMLEditorButton : IFunctionButton
+    public interface IHTMLEditorButton : IButton
     {
+        void IconClicked(HTMLEditorButtonArgs doc);
         Image IconImage { get; }
 
         /// <summary>
