@@ -8,12 +8,12 @@ namespace YARTE.UI.Buttons
     {
         public void IconClicked(ButtonArgs args)
         {
-            args.Editor.InsertTextAtCursor("123456789");
+            Random t = new Random();
+            string valueToReplace = t.Next().ToString();
+            args.Editor.InsertTextAtCursor(valueToReplace); // place random int in checkbox's position
             string html = args.Editor.Html;
-            html = html.Replace("123456789", "<input type=\"checkbox\">");
-            Console.WriteLine(html.ToCharArray()[html.ToCharArray().Length-3]);
-            args.Editor.Html = "";
-            args.Editor.Html = html;
+            html = html.Replace(valueToReplace, "<input type=\"checkbox\">"); // place checkbox
+            args.Editor.Html = html; // reload
         }
 
         public Image IconImage
@@ -36,7 +36,7 @@ namespace YARTE.UI.Buttons
 
         public string CommandIdentifier
         {
-            get { return "Bold"; }
+            get { return ""; }
         }
     }
 }
