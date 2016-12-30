@@ -237,10 +237,10 @@ namespace YARTE.UI
                 }
             }
         }
-
-        public string InsertTextAtCursor
+        
+        public void InsertTextAtCursor(string val)
         {
-            set { _doc.ExecCommand("Paste", false, value); }
+            _doc.ExecCommand("Paste", false, val);
         }
 
         private void CheckCommandStateChanges()
