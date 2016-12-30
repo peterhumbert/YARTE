@@ -28,6 +28,7 @@ namespace YARTE.UI.Buttons
             editor.AddToolbarItem(new JustifyRightButton());
             editor.AddToolbarDivider();
             editor.AddToolbarItem(new ReadOnlyButton());
+            editor.AddToolbarItem(new CheckboxButton());
         }
     }
 }
