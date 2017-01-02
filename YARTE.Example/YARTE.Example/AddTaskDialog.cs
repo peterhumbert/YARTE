@@ -27,7 +27,10 @@ namespace YARTE.Example
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
-            frmParent.AddTask(new CheckboxItem(txtInput.Text, rand.Next()));
+            string letters = "qwertyuiopasdfghjklzxcvbnm";
+            frmParent.AddTask(new CheckboxItem(txtInput.Text, rand.Next(1000000000, int.MaxValue).ToString() + 
+                letters[rand.Next(letters.Length)]));
+            txtInput.Clear();
         }
     }
 }

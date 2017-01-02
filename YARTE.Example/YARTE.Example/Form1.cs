@@ -34,6 +34,7 @@ namespace YARTE.Example
         public void AddTask(CheckboxItem task)
         {
             tasks.Add(task);
+            htmlEditor1.InsertTextAtCursor(task.Identifier);
         }
     }
 }
