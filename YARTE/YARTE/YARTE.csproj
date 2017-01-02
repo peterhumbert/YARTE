@@ -62,6 +62,7 @@
     <Compile Include="Buttons\UnderlineButton.cs" />
     <Compile Include="Buttons\UnlinkButton.cs" />
     <Compile Include="Buttons\UnorderedListButton.cs" />
+    <Compile Include="CheckboxItem.cs" />
     <Compile Include="HtmlEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
