@@ -12,10 +12,14 @@ namespace YARTE.Example
             PredefinedButtonSets.SetupDefaultButtons(this.htmlEditor1);
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+        private void btnDispHTML_Click(object sender, System.EventArgs e)
         {
             MessageBox.Show(this.htmlEditor1.Html, "The output HTML");
-            htmlEditor1.ReadOnly = !htmlEditor1.ReadOnly;
+        }
+
+        private void btnAddTodo_Click(object sender, System.EventArgs e)
+        {
+            htmlEditor1.InsertTextAtCursor("testing");
         }
     }
 }
