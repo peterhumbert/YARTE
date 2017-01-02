@@ -300,5 +300,19 @@ namespace YARTE.UI
                 Process.Start(e.Url.ToString());
             }
         }
+
+        public void insertCheckbox()
+        {
+            Random rand = new Random();
+            string letters = "qwertyuiopasdfghjklzxcvbnm";
+            string identifier = rand.Next(1000000000, int.MaxValue).ToString() +
+                letters[rand.Next(letters.Length)];
+            InsertTextAtCursor(identifier); // place random int in checkbox's position
+                                            // pasting HTML doesn't work
+            string html = this.Html;
+            html = html.Replace(identifier, "<input type=\"checkbox\" id=\"" + identifier + "\">"); // place checkbox
+            this.Html = html; // reload
+            
+        }
     }
 }
