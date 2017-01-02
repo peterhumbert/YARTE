@@ -8,12 +8,12 @@ namespace YARTE
     public class CheckboxItem
     {
         private string strLabel;
-        private int intIdentifier;
+        private string strIdentifier;
 
-        public CheckboxItem(string label, int identifier)
+        public CheckboxItem(string label, string identifier)
         {
             strLabel = label;
-            intIdentifier = identifier;
+            strIdentifier = identifier;
         }
 
         public string Label
@@ -22,10 +22,10 @@ namespace YARTE
             set { strLabel = value; }
         }
 
-        public int Identifier
+        public string Identifier
         {
-            get { return intIdentifier; }
-            set { intIdentifier = value; }
+            get { return strIdentifier; }
+            set { strIdentifier = value; }
         }
     }
 }
