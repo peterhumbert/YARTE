@@ -221,7 +221,14 @@ namespace YARTE.UI
         {
             get
             {
-                return textWebBrowser.DocumentText;
+                var doc = textWebBrowser.Document.DomDocument as IHTMLDocument2;
+                //return textWebBrowser.DocumentText;
+                if (textWebBrowser.Document.GetElementsByTagName("input").Count > 0)
+                {
+                    Console.WriteLine(textWebBrowser.Document.GetElementsByTagName("input")[0].GetAttribute("checked"));
+                }
+                
+                return doc.body.innerHTML;
             }
             set
             {
