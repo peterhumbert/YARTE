@@ -174,6 +174,7 @@ namespace YARTE.UI
                     var doc = textWebBrowser.Document.DomDocument as IHTMLDocument2;
                     if (doc != null) doc.designMode = designMode;
                 }
+                this.Html = "";
                 if (html != null)
                 {
                     this.Html = html;
@@ -339,8 +340,7 @@ namespace YARTE.UI
                 letters[rand.Next(letters.Length)];
             InsertTextAtCursor(identifier); // place random int in checkbox's position
                                             // pasting HTML doesn't work
-            Console.WriteLine("before pause " + identifier);
-            System.Threading.Thread.Sleep(5000);
+            
             string html = this.Html;
             if (label == null)
             {
