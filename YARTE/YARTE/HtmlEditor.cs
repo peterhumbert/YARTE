@@ -226,6 +226,7 @@ namespace YARTE.UI
         {
             get
             {
+                
                 var doc = textWebBrowser.Document.DomDocument as IHTMLDocument2;
                 
                 // sample for getting CHECKED states
@@ -233,14 +234,14 @@ namespace YARTE.UI
                 {
                     Console.WriteLine(textWebBrowser.Document.GetElementsByTagName("input")[0].GetAttribute("checked"));
                 }
-                
+
                 /* this previously returned textWebBrowser.DocumentText, so the following HTML is now omitted:
                    < !DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
                    < HTML >< HEAD >
                    < META content = "text/html; charset=unicode" http - equiv = Content - Type >
                    < META name = GENERATOR content = "MSHTML 11.00.10570.1001" ></ HEAD >
                    < BODY ></ BODY ></ HTML > 
-                */
+                */ /*
                 if (doc != null)
                 {
                     return doc.body.innerHTML;
@@ -249,6 +250,8 @@ namespace YARTE.UI
                 {
                     return "";
                 }
+                */
+                return textWebBrowser.DocumentText;
             }
             set
             {
@@ -336,6 +339,8 @@ namespace YARTE.UI
                 letters[rand.Next(letters.Length)];
             InsertTextAtCursor(identifier); // place random int in checkbox's position
                                             // pasting HTML doesn't work
+            Console.WriteLine("before pause " + identifier);
+            System.Threading.Thread.Sleep(5000);
             string html = this.Html;
             if (label == null)
             {
