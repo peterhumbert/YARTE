@@ -227,13 +227,21 @@ namespace YARTE.UI
             get
             {
                 var doc = textWebBrowser.Document.DomDocument as IHTMLDocument2;
-                //return textWebBrowser.DocumentText;
+                
+                // sample for getting CHECKED states
                 if (textWebBrowser.Document.GetElementsByTagName("input").Count > 0)
                 {
                     Console.WriteLine(textWebBrowser.Document.GetElementsByTagName("input")[0].GetAttribute("checked"));
                 }
-                
+
                 return doc.body.innerHTML;
+                /* this previously returned textWebBrowser.DocumentText, so the following HTML is now omitted:
+                   < !DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+                   < HTML >< HEAD >
+                   < META content = "text/html; charset=unicode" http - equiv = Content - Type >
+                   < META name = GENERATOR content = "MSHTML 11.00.10570.1001" ></ HEAD >
+                   < BODY ></ BODY ></ HTML > 
+                */
             }
             set
             {
