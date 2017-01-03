@@ -347,5 +347,15 @@ namespace YARTE.UI
 
             return identifier;
         }
+
+        public Dictionary<string,string> getCheckedStates()
+        {
+            Dictionary<string, string> output = new Dictionary<string, string>();
+            foreach (HtmlElement item in textWebBrowser.Document.GetElementsByTagName("input"))
+            {
+                output.Add(item.GetAttribute("id"), item.GetAttribute("checked"));
+            }
+            return output;
+        }
     }
 }
