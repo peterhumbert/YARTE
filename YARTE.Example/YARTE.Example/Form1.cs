@@ -23,18 +23,17 @@ namespace YARTE.Example
 
         private void btnAddTodo_Click(object sender, System.EventArgs e)
         {
-            htmlEditor1.InsertTextAtCursor("testing");
-
             AddTaskDialog atd = new AddTaskDialog(this);
             atd.ShowDialog();
 
             Console.WriteLine(tasks[0].Label);
         }
 
-        public void AddTask(CheckboxItem task)
+        public void AddTask(string label)
         {
-            tasks.Add(task);
-            htmlEditor1.InsertTextAtCursor(task.Identifier);
+            string id = htmlEditor1.insertCheckbox(label);
+            tasks.Add(new CheckboxItem(label, id));
+            //htmlEditor1.InsertTextAtCursor(task.Identifier);
         }
     }
 }

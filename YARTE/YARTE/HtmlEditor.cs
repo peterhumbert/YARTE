@@ -308,7 +308,7 @@ namespace YARTE.UI
             }
         }
 
-        public void insertCheckbox()
+        public string insertCheckbox(string label = null)
         {
             Random rand = new Random();
             string letters = "qwertyuiopasdfghjklzxcvbnm";
@@ -317,9 +317,22 @@ namespace YARTE.UI
             InsertTextAtCursor(identifier); // place random int in checkbox's position
                                             // pasting HTML doesn't work
             string html = this.Html;
-            html = html.Replace(identifier, "<input type=\"checkbox\" id=\"" + identifier + "\">"); // place checkbox
-            this.Html = html; // reload
+            if (label == null)
+            {
+                // place plain checkbox
+                html = html.Replace(identifier,
+                    "<input type=\"checkbox\" id=\"" + identifier + "\">");
+            }
+            else
+            {
+                // place checkbox and label
+                html = html.Replace(identifier,
+                    "<input type=\"checkbox\" id=\"" + identifier + "\"> " + label + "<br>");
+            }
             
+            this.Html = html; // reload
+
+            return identifier;
         }
     }
 }
