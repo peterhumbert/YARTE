@@ -39,7 +39,7 @@
             this.btnCancel.Location = new System.Drawing.Point(244, 75);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -59,7 +59,7 @@
             this.txtInput.Location = new System.Drawing.Point(12, 30);
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(388, 22);
-            this.txtInput.TabIndex = 2;
+            this.txtInput.TabIndex = 0;
             // 
             // AddTaskDialog
             // 

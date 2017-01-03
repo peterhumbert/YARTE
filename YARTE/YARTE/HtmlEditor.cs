@@ -174,7 +174,10 @@ namespace YARTE.UI
                     var doc = textWebBrowser.Document.DomDocument as IHTMLDocument2;
                     if (doc != null) doc.designMode = designMode;
                 }
-                this.Html = html;
+                if (html != null)
+                {
+                    this.Html = html;
+                }
             }
         }
 
