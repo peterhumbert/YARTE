@@ -9,11 +9,17 @@ namespace YARTE
     {
         private string strLabel;
         private string strIdentifier;
+        private bool blnCheckd = false;
 
         public CheckboxItem(string label, string identifier)
         {
             strLabel = label;
             strIdentifier = identifier;
+        }
+
+        public CheckboxItem(string label, string identifier, bool checkd) : this(label, identifier)
+        {
+            blnCheckd = checkd;
         }
 
         public string Label
