@@ -233,8 +233,7 @@ namespace YARTE.UI
                 {
                     Console.WriteLine(textWebBrowser.Document.GetElementsByTagName("input")[0].GetAttribute("checked"));
                 }
-
-                return doc.body.innerHTML;
+                
                 /* this previously returned textWebBrowser.DocumentText, so the following HTML is now omitted:
                    < !DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
                    < HTML >< HEAD >
@@ -242,6 +241,14 @@ namespace YARTE.UI
                    < META name = GENERATOR content = "MSHTML 11.00.10570.1001" ></ HEAD >
                    < BODY ></ BODY ></ HTML > 
                 */
+                if (doc != null)
+                {
+                    return doc.body.innerHTML;
+                }
+                else
+                {
+                    return "";
+                }
             }
             set
             {
