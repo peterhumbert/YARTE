@@ -252,7 +252,15 @@ namespace YARTE.UI
                     return "";
                 }
                 */
-                return textWebBrowser.DocumentText;
+                try
+                {
+                    return doc.body.innerHTML;
+                }
+                catch (Exception)
+                {
+
+                    return textWebBrowser.DocumentText;
+                }                
             }
             set
             {
