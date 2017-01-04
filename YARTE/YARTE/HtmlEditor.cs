@@ -368,5 +368,19 @@ namespace YARTE.UI
             }
             return output;
         }
+
+        public void updateCheckedState(string identifier, bool checkedState)
+        {
+            string state;
+            if (checkedState)
+            {
+                state = "True";
+            }
+            else
+            {
+                state = "false";
+            }
+            textWebBrowser.Document.GetElementById(identifier).SetAttribute("CHECKED", state);
+        }
     }
 }
