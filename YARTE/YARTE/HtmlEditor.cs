@@ -378,7 +378,7 @@ namespace YARTE.UI
             }
             else
             {
-                state = "false";
+                state = ""; // "False" doesn't work
             }
             textWebBrowser.Document.GetElementById(identifier).SetAttribute("CHECKED", state);
         }

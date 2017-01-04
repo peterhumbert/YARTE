@@ -32,16 +32,17 @@
             this.btnDispHTML = new System.Windows.Forms.Button();
             this.btnAddTodo = new System.Windows.Forms.Button();
             this.btnDispTasks = new System.Windows.Forms.Button();
+            this.btnChangeChecked = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // htmlEditor1
             // 
             this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.htmlEditor1.Html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">" + 
-                "<HTML><HEAD>" +
-                "<META content=\"text/html; charset=unicode\" http-equiv=Content-Type>" +
-                   "<META name=GENERATOR content=\"MSHTML 11.00.10570.1001\"></HEAD>" +
-                      "<BODY></BODY></HTML>";
+            this.htmlEditor1.Html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">" +
+                    "<HTML><HEAD>" +
+                    "<META content=\"text/html; charset=unicode\" http-equiv=Content-Type>" +
+                       "<META name=GENERATOR content=\"MSHTML 11.00.10570.1001\"></HEAD>" +
+                          "<BODY></BODY></HTML>";
             this.htmlEditor1.Location = new System.Drawing.Point(0, 0);
             this.htmlEditor1.Margin = new System.Windows.Forms.Padding(4);
             this.htmlEditor1.Name = "htmlEditor1";
@@ -80,11 +81,22 @@
             this.btnDispTasks.UseVisualStyleBackColor = true;
             this.btnDispTasks.Click += new System.EventHandler(this.btnDispTasks_Click);
             // 
+            // btnChangeChecked
+            // 
+            this.btnChangeChecked.Location = new System.Drawing.Point(311, 398);
+            this.btnChangeChecked.Name = "btnChangeChecked";
+            this.btnChangeChecked.Size = new System.Drawing.Size(90, 23);
+            this.btnChangeChecked.TabIndex = 4;
+            this.btnChangeChecked.Text = "Checked";
+            this.btnChangeChecked.UseVisualStyleBackColor = true;
+            this.btnChangeChecked.Click += new System.EventHandler(this.btnChangeChecked_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 433);
+            this.Controls.Add(this.btnChangeChecked);
             this.Controls.Add(this.btnDispTasks);
             this.Controls.Add(this.btnAddTodo);
             this.Controls.Add(this.btnDispHTML);
@@ -101,6 +113,7 @@
         private System.Windows.Forms.Button btnDispHTML;
         private System.Windows.Forms.Button btnAddTodo;
         private System.Windows.Forms.Button btnDispTasks;
+        private System.Windows.Forms.Button btnChangeChecked;
     }
 }
 

@@ -60,5 +60,21 @@ namespace YARTE.Example
             }
             MessageBox.Show(output, "Checked Tasks");
         }
+
+        private void btnChangeChecked_Click(object sender, EventArgs e)
+        {
+            // changes an arbitrary task's checked state
+            Random rand = new Random();
+            int temp = rand.Next(0, tasks.Count);
+            CheckboxItem[] items = new CheckboxItem[10];
+            CheckboxItem selected;
+            tasks.Values.CopyTo(items,0);
+            Console.WriteLine(temp);
+
+            // get a checkbox item from a known identifier
+            tasks.TryGetValue(items[temp].Identifier, out selected);
+            selected.Checked = !selected.Checked; // local dictionary is up-to-date
+            htmlEditor1.updateCheckedState(selected.Identifier, selected.Checked); // update editor
+        }
     }
 }
