@@ -31,6 +31,7 @@
             this.htmlEditor1 = new YARTE.UI.HtmlEditor();
             this.btnDispHTML = new System.Windows.Forms.Button();
             this.btnAddTodo = new System.Windows.Forms.Button();
+            this.btnDispTasks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // htmlEditor1
@@ -69,11 +70,22 @@
             this.btnAddTodo.UseVisualStyleBackColor = true;
             this.btnAddTodo.Click += new System.EventHandler(this.btnAddTodo_Click);
             // 
+            // btnDispTasks
+            // 
+            this.btnDispTasks.Location = new System.Drawing.Point(407, 398);
+            this.btnDispTasks.Name = "btnDispTasks";
+            this.btnDispTasks.Size = new System.Drawing.Size(90, 23);
+            this.btnDispTasks.TabIndex = 3;
+            this.btnDispTasks.Text = "Disp Tasks";
+            this.btnDispTasks.UseVisualStyleBackColor = true;
+            this.btnDispTasks.Click += new System.EventHandler(this.btnDispTasks_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 433);
+            this.Controls.Add(this.btnDispTasks);
             this.Controls.Add(this.btnAddTodo);
             this.Controls.Add(this.btnDispHTML);
             this.Controls.Add(this.htmlEditor1);
@@ -88,6 +100,7 @@
         private UI.HtmlEditor htmlEditor1;
         private System.Windows.Forms.Button btnDispHTML;
         private System.Windows.Forms.Button btnAddTodo;
+        private System.Windows.Forms.Button btnDispTasks;
     }
 }
 

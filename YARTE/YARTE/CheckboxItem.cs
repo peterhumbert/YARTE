@@ -33,5 +33,11 @@ namespace YARTE
             get { return strIdentifier; }
             set { strIdentifier = value; }
         }
+
+        public bool Checked
+        {
+            get { return blnCheckd; }
+            set { blnCheckd = value; }
+        }
     }
 }
