@@ -368,12 +368,12 @@ namespace YARTE.UI
             return identifier;
         }
 
-        public Dictionary<string,string> getCheckedStates()
+        public Dictionary<string,bool> getCheckedStates()
         {
-            Dictionary<string, string> output = new Dictionary<string, string>();
+            Dictionary<string, bool> output = new Dictionary<string, bool>();
             foreach (HtmlElement item in textWebBrowser.Document.GetElementsByTagName("input"))
             {
-                output.Add(item.GetAttribute("id"), item.GetAttribute("checked"));
+                output.Add(item.GetAttribute("id"), item.GetAttribute("checked").Equals("True"));
             }
             return output;
         }

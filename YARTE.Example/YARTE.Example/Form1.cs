@@ -41,7 +41,7 @@ namespace YARTE.Example
             string output = "";
             foreach (var item in htmlEditor1.getCheckedStates())
             {
-                if (item.Value.Equals("True"))
+                if (item.Value)
                 {
                     output += item.Key + "\n";
                 }
@@ -54,7 +54,7 @@ namespace YARTE.Example
             {
                 CheckboxItem temp;
                 tasks.TryGetValue(item.Key, out temp);
-                temp.Checked = item.Value.Equals("True");
+                temp.Checked = item.Value;
                 tasks.TryGetValue(item.Key, out temp); // redefine temp to ensure Dictionary contains up-to-date refs
                 output += temp.Label + " " + temp.Checked + "\n";
             }
