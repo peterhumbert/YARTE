@@ -242,23 +242,14 @@ namespace YARTE.UI
                    < META content = "text/html; charset=unicode" http - equiv = Content - Type >
                    < META name = GENERATOR content = "MSHTML 11.00.10570.1001" ></ HEAD >
                    < BODY ></ BODY ></ HTML > 
-                */ /*
-                if (doc != null)
-                {
-                    return doc.body.innerHTML;
-                }
-                else
-                {
-                    return "";
-                }
                 */
                 try
                 {
-                    return doc.body.innerHTML;
+                    return doc.body.innerHTML; // this is used during runtime
                 }
                 catch (Exception)
                 {
-
+                    // the Form [Design] view evaluates this
                     return textWebBrowser.DocumentText;
                 }                
             }
