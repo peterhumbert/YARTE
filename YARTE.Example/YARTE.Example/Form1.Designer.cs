@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.htmlEditor1 = new YARTE.UI.HtmlEditor();
             this.btnDispHTML = new System.Windows.Forms.Button();
             this.btnAddTodo = new System.Windows.Forms.Button();
@@ -37,7 +36,11 @@
             // htmlEditor1
             // 
             this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.htmlEditor1.Html = resources.GetString("htmlEditor1.Html");
+            this.htmlEditor1.Html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">" + 
+                "<HTML><HEAD>" +
+                "<META content=\"text/html; charset=unicode\" http-equiv=Content-Type>" +
+                   "<META name=GENERATOR content=\"MSHTML 11.00.10570.1001\"></HEAD>" +
+                      "<BODY></BODY></HTML>";
             this.htmlEditor1.Location = new System.Drawing.Point(0, 0);
             this.htmlEditor1.Margin = new System.Windows.Forms.Padding(4);
             this.htmlEditor1.Name = "htmlEditor1";
