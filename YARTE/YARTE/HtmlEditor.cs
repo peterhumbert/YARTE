@@ -375,10 +375,13 @@ namespace YARTE.UI
             Dictionary<string, CheckboxItem> output = new Dictionary<string, CheckboxItem>();
             foreach (HtmlElement item in textWebBrowser.Document.GetElementsByTagName("input"))
             {
-                output.Add(item.GetAttribute("id"), 
-                    new CheckboxItem(textWebBrowser.Document.GetElementById(item.GetAttribute("id") + "-label").InnerHtml,
-                    item.GetAttribute("id"),
-                    item.GetAttribute("checked").Equals("True")));
+                if (item.GetAttribute("id") != null)
+                {
+                    output.Add(item.GetAttribute("id"),
+                        new CheckboxItem(textWebBrowser.Document.GetElementById(item.GetAttribute("id") + "-label").InnerHtml,
+                        item.GetAttribute("id"),
+                        item.GetAttribute("checked").Equals("True")));
+                }
             }
             return output;
         }
