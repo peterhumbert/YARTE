@@ -245,7 +245,8 @@ namespace YARTE.UI
                 */
                 try
                 {
-                    return doc.body.innerHTML; // this is used during runtime
+                    return doc.body.innerHTML + ""; // this is used during runtime
+                                                    // make sure it returns empty string instead of null
                 }
                 catch (Exception)
                 {
@@ -255,6 +256,11 @@ namespace YARTE.UI
             }
             set
             {
+                if (value == null)
+                {
+                    value = "<html><body></body></html>";
+                }
+
                 if (textWebBrowser.Document != null)
                 {
                     // updating this way avoids an alert box
@@ -349,18 +355,10 @@ namespace YARTE.UI
             }
             else
             {
-                // place checkbox and label
-                try
-                {
-                    html = html.Replace(identifier,
+                // place checkbox and label\
+                html = html.Replace(identifier,
                     "<input type=\"checkbox\" id=\"" + identifier + "\"><span id=\"" +
                     identifier + "-label\">" + label + "</span><br>");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                
             }
             
             this.Html = html; // reload
@@ -383,13 +381,10 @@ namespace YARTE.UI
             Dictionary<string, CheckboxItem> output = new Dictionary<string, CheckboxItem>();
             foreach (HtmlElement item in textWebBrowser.Document.GetElementsByTagName("input"))
             {
-                if (item.GetAttribute("id") != null)
-                {
-                    output.Add(item.GetAttribute("id"),
-                        new CheckboxItem(textWebBrowser.Document.GetElementById(item.GetAttribute("id") + "-label").InnerHtml,
-                        item.GetAttribute("id"),
-                        item.GetAttribute("checked").Equals("True")));
-                }
+                output.Add(item.GetAttribute("id"),
+                    new CheckboxItem(textWebBrowser.Document.GetElementById(item.GetAttribute("id") + "-label").InnerHtml,
+                    item.GetAttribute("id"),
+                    item.GetAttribute("checked").Equals("True")));
             }
             return output;
         }
