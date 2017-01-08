@@ -83,7 +83,7 @@
                 "<HTML><HEAD>" +
                 "<META content=\"text/html; charset=unicode\" http-equiv=Content-Type>" +
                    "<META name=GENERATOR content=\"MSHTML 11.00.10570.1001\"></HEAD>" +
-                      "<BODY></BODY></HTML>"; ;
+                      "<BODY></BODY></HTML>";
             this.htmlEditor1.Location = new System.Drawing.Point(0, 0);
             this.htmlEditor1.Margin = new System.Windows.Forms.Padding(4);
             this.htmlEditor1.Name = "htmlEditor1";

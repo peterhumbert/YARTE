@@ -350,9 +350,17 @@ namespace YARTE.UI
             else
             {
                 // place checkbox and label
-                html = html.Replace(identifier,
+                try
+                {
+                    html = html.Replace(identifier,
                     "<input type=\"checkbox\" id=\"" + identifier + "\"><span id=\"" +
                     identifier + "-label\">" + label + "</span><br>");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                
             }
             
             this.Html = html; // reload
