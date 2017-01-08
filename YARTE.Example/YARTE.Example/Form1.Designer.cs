@@ -28,28 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.htmlEditor1 = new YARTE.UI.HtmlEditor();
             this.btnDispHTML = new System.Windows.Forms.Button();
             this.btnAddTodo = new System.Windows.Forms.Button();
             this.btnDispTasks = new System.Windows.Forms.Button();
             this.btnChangeChecked = new System.Windows.Forms.Button();
+            this.htmlEditor1 = new YARTE.UI.HtmlEditor();
+            this.btnGetTasks = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // htmlEditor1
-            // 
-            this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.htmlEditor1.Html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">" +
-                    "<HTML><HEAD>" +
-                    "<META content=\"text/html; charset=unicode\" http-equiv=Content-Type>" +
-                       "<META name=GENERATOR content=\"MSHTML 11.00.10570.1001\"></HEAD>" +
-                          "<BODY></BODY></HTML>";
-            this.htmlEditor1.Location = new System.Drawing.Point(0, 0);
-            this.htmlEditor1.Margin = new System.Windows.Forms.Padding(4);
-            this.htmlEditor1.Name = "htmlEditor1";
-            this.htmlEditor1.ReadOnly = false;
-            this.htmlEditor1.ShowToolbar = true;
-            this.htmlEditor1.Size = new System.Drawing.Size(723, 395);
-            this.htmlEditor1.TabIndex = 0;
             // 
             // btnDispHTML
             // 
@@ -91,11 +76,38 @@
             this.btnChangeChecked.UseVisualStyleBackColor = true;
             this.btnChangeChecked.Click += new System.EventHandler(this.btnChangeChecked_Click);
             // 
+            // htmlEditor1
+            // 
+            this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.htmlEditor1.Html = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">" +
+                "<HTML><HEAD>" +
+                "<META content=\"text/html; charset=unicode\" http-equiv=Content-Type>" +
+                   "<META name=GENERATOR content=\"MSHTML 11.00.10570.1001\"></HEAD>" +
+                      "<BODY></BODY></HTML>"; ;
+            this.htmlEditor1.Location = new System.Drawing.Point(0, 0);
+            this.htmlEditor1.Margin = new System.Windows.Forms.Padding(4);
+            this.htmlEditor1.Name = "htmlEditor1";
+            this.htmlEditor1.ReadOnly = false;
+            this.htmlEditor1.ShowToolbar = true;
+            this.htmlEditor1.Size = new System.Drawing.Size(723, 395);
+            this.htmlEditor1.TabIndex = 0;
+            // 
+            // btnGetTasks
+            // 
+            this.btnGetTasks.Location = new System.Drawing.Point(215, 398);
+            this.btnGetTasks.Name = "btnGetTasks";
+            this.btnGetTasks.Size = new System.Drawing.Size(90, 23);
+            this.btnGetTasks.TabIndex = 5;
+            this.btnGetTasks.Text = "Get Tasks";
+            this.btnGetTasks.UseVisualStyleBackColor = true;
+            this.btnGetTasks.Click += new System.EventHandler(this.btnGetTasks_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 433);
+            this.Controls.Add(this.btnGetTasks);
             this.Controls.Add(this.btnChangeChecked);
             this.Controls.Add(this.btnDispTasks);
             this.Controls.Add(this.btnAddTodo);
@@ -114,6 +126,7 @@
         private System.Windows.Forms.Button btnAddTodo;
         private System.Windows.Forms.Button btnDispTasks;
         private System.Windows.Forms.Button btnChangeChecked;
+        private System.Windows.Forms.Button btnGetTasks;
     }
 }
 

@@ -351,7 +351,8 @@ namespace YARTE.UI
             {
                 // place checkbox and label
                 html = html.Replace(identifier,
-                    "<input type=\"checkbox\" id=\"" + identifier + "\"> " + label + "<br>");
+                    "<input type=\"checkbox\" id=\"" + identifier + "\"><span id=\"" +
+                    identifier + "-label\">" + label + "</span><br>");
             }
             
             this.Html = html; // reload
@@ -365,6 +366,22 @@ namespace YARTE.UI
             foreach (HtmlElement item in textWebBrowser.Document.GetElementsByTagName("input"))
             {
                 output.Add(item.GetAttribute("id"), item.GetAttribute("checked").Equals("True"));
+            }
+            return output;
+        }
+
+        public Dictionary<string,CheckboxItem> getCheckboxes()
+        {
+            Dictionary<string, CheckboxItem> output = new Dictionary<string, CheckboxItem>();
+            foreach (HtmlElement item in textWebBrowser.Document.GetElementsByTagName("input"))
+            {
+                if (item.GetAttribute("id") != null)
+                {
+                    output.Add(item.GetAttribute("id"),
+                        new CheckboxItem(textWebBrowser.Document.GetElementById(item.GetAttribute("id") + "-label").InnerHtml,
+                        item.GetAttribute("id"),
+                        item.GetAttribute("checked").Equals("True")));
+                }
             }
             return output;
         }

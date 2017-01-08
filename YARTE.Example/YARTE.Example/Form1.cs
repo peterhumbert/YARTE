@@ -76,5 +76,20 @@ namespace YARTE.Example
             selected.Checked = !selected.Checked; // local dictionary is up-to-date
             htmlEditor1.updateCheckedState(selected.Identifier, selected.Checked); // update editor
         }
+
+        private void btnGetTasks_Click(object sender, EventArgs e)
+        {
+            // update the tasks dictionary using the method that returns a
+            // dictionary of all ID'd checkboxes. Display labels and 
+            // checked states.
+            tasks = htmlEditor1.getCheckboxes();
+            string output = "";
+            foreach (var item in tasks)
+            {
+                output += item.Value.Label + " " + item.Value.Checked + "\n";
+            }
+
+            MessageBox.Show(output, "The current task states");
+        }
     }
 }
