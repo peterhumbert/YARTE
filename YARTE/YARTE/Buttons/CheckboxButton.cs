@@ -8,12 +8,7 @@ namespace YARTE.UI.Buttons
     {
         public void IconClicked(ButtonArgs args)
         {
-            Random t = new Random();
-            string valueToReplace = t.Next().ToString();
-            args.Editor.InsertTextAtCursor(valueToReplace); // place random int in checkbox's position
-            string html = args.Editor.Html;
-            html = html.Replace(valueToReplace, "<input type=\"checkbox\">"); // place checkbox
-            args.Editor.Html = html; // reload
+            args.Editor.insertCheckbox();            
         }
 
         public Image IconImage

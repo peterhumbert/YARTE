@@ -167,11 +167,17 @@ namespace YARTE.UI
             }
             set
             {
+                string html = this.Html;
                 if (textWebBrowser.Document != null)
                 {
                     var designMode = value ? "Off" : "On";
                     var doc = textWebBrowser.Document.DomDocument as IHTMLDocument2;
                     if (doc != null) doc.designMode = designMode;
+                }
+                this.Html = "";
+                if (html != null)
+                {
+                    this.Html = html;
                 }
             }
         }
@@ -221,7 +227,31 @@ namespace YARTE.UI
         {
             get
             {
-                return textWebBrowser.DocumentText;
+                
+                var doc = textWebBrowser.Document.DomDocument as IHTMLDocument2;
+                
+                // sample for getting CHECKED states
+                if (textWebBrowser.Document.GetElementsByTagName("input").Count > 0)
+                {
+                    Console.WriteLine(textWebBrowser.Document.GetElementsByTagName("input")[0].GetAttribute("checked"));
+                }
+
+                /* this previously returned textWebBrowser.DocumentText, so the following HTML is now omitted:
+                   < !DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+                   < HTML >< HEAD >
+                   < META content = "text/html; charset=unicode" http - equiv = Content - Type >
+                   < META name = GENERATOR content = "MSHTML 11.00.10570.1001" ></ HEAD >
+                   < BODY ></ BODY ></ HTML > 
+                */
+                try
+                {
+                    return doc.body.innerHTML; // this is used during runtime
+                }
+                catch (Exception)
+                {
+                    // the Form [Design] view evaluates this
+                    return textWebBrowser.DocumentText;
+                }                
             }
             set
             {
@@ -299,6 +329,58 @@ namespace YARTE.UI
 
                 Process.Start(e.Url.ToString());
             }
+        }
+
+        public string insertCheckbox(string label = null)
+        {
+            Random rand = new Random();
+            string letters = "qwertyuiopasdfghjklzxcvbnm";
+            string identifier = rand.Next(1000000000, int.MaxValue).ToString() +
+                letters[rand.Next(letters.Length)];
+            InsertTextAtCursor(identifier); // place random int in checkbox's position
+                                            // pasting HTML doesn't work
+            
+            string html = this.Html;
+            if (label == null)
+            {
+                // place plain checkbox
+                html = html.Replace(identifier,
+                    "<input type=\"checkbox\" id=\"" + identifier + "\">");
+            }
+            else
+            {
+                // place checkbox and label
+                html = html.Replace(identifier,
+                    "<input type=\"checkbox\" id=\"" + identifier + "\"> " + label + "<br>");
+            }
+            
+            this.Html = html; // reload
+
+            return identifier;
+        }
+
+        public Dictionary<string,bool> getCheckedStates()
+        {
+            Dictionary<string, bool> output = new Dictionary<string, bool>();
+            foreach (HtmlElement item in textWebBrowser.Document.GetElementsByTagName("input"))
+            {
+                output.Add(item.GetAttribute("id"), item.GetAttribute("checked").Equals("True"));
+            }
+            return output;
+        }
+
+        public void updateCheckedState(string identifier, bool checkedState)
+        {
+            string state;
+            if (checkedState)
+            {
+                state = "True";
+            }
+            else
+            {
+                state = ""; // "False" doesn't work
+            }
+            textWebBrowser.Document.GetElementById(identifier).SetAttribute("CHECKED", state);
         }
     }
 }
