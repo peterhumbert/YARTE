@@ -351,14 +351,14 @@ namespace YARTE.UI
             {
                 // place plain checkbox
                 html = html.Replace(identifier,
-                    "<input type=\"checkbox\" id=\"" + identifier + "\">");
+                    "<div id=\"" + identifier + "\"><input type=\"checkbox\" id=\"" + identifier + "\"></div>");
             }
             else
             {
                 // place checkbox and label\
                 html = html.Replace(identifier,
-                    "<input type=\"checkbox\" id=\"" + identifier + "\"><span id=\"" +
-                    identifier + "-label\">" + label + "</span><br>");
+                    "<div id=\"" + identifier + "\"><input type=\"checkbox\" id=\"" + identifier + "\">" + 
+                    label + "</div>");
             }
             
             this.Html = html; // reload
